@@ -1,10 +1,10 @@
 \documentclass{report} % Type of document
 %----------------------------------------------------------------------------
 % Load all useful packages
-\usepackage{packages} 
+\usepackage{1_packages} 
 %----------------------------------------------------------------------------
 % Load custom commands
-\input{commandes.sty}
+\input{2_commandes.sty}
 %----------------------------------------------------------------------------
 % If documentclass is report => define appearance of chapter titles
 % check if 'titlesec' package is loaded first
@@ -22,7 +22,7 @@
 \numberwithin{table}{section}
 %---------------------------------------------------------------------------- 
 % Default path for figures
-\graphicspath{{images/}}
+%\graphicspath{{images/}}
 %---------------------------------------------------------------------------- 
 % Definition of headers and footers
 %\pagestyle{fancy}
@@ -30,15 +30,15 @@
 %\fancyhead[R]{}
 %----------------------------------------------------------------------------
 % Ressources biblio
-\addbibresource{biblio.bib}
+\addbibresource{3_biblio.bib}
 % style is defined in packages.sty, when the package "biblatex" is called
 %----------------------------------------------------------------------------
 \begin{document}
-\input{rapport_front_page}
+\input{4_front_page}
 \tableofcontents
-\input{introduction}
+\input{5_introduction}
 %\input{}
-\input{conclusion}
+\input{6_conclusion}
 \appendix
 \printbibliography[heading=bibintoc,title={Bibliographie}]
 %\printbibliography[heading=subbibintoc,type=article,title={Articles only}]
