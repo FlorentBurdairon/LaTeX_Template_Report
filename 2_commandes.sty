@@ -1,0 +1,150 @@
+% List of custom commands
+% New commands and new definitions of already existing commands
+
+%==============================================================%
+% 							Syntax 							   %
+%==============================================================%
+\newcommand\cad{c'est-à-dire }
+\newcommand{\bt}[1]{\textbf{#1}}
+\newcommand{\PFS}{Principe Fondamental de la Statique }
+\newcommand\textbox[1]{\parbox{.333\textwidth}{#1}}
+%\newcommand{\lefttoright}[3]{#1\hfill\centering{#2}\hfill #3}
+\newcommand{\lefttoright}[3]{\textbox{#1}\hfil\centering{\textbox{#2}}\hfil \textbox{#3}}
+\newcommand\textline[4][t]{%
+  \par\smallskip\noindent\parbox[#1]{.333\textwidth}{\raggedright#2}%
+  \parbox[#1]{.333\textwidth}{\centering#3}%
+  \parbox[#1]{.333\textwidth}{\raggedleft#4}\par\smallskip%
+}
+
+%==============================================================%
+% 						  Mathematics 						   %
+%==============================================================%
+
+% Mathematical operators
+\newcommand{\dd}{\mathrm{d}}	% simple derivative
+\newcommand{\ddfrac}[2]{\frac{\dd #1}{\dd #2}}	%	fraction with simple derivative
+\newcommand{\pd}{\partial}		% partial derivative
+\newcommand{\pdfrac}[2]{\dfrac{\pd #1}{\pd #2}}	%	fraction with partial derivative
+\newcommand{\Dd}{\mathrm{D}}	% material derivative
+\newcommand{\Ddfrac}[2]{\frac{\mathrm{D} #1}{\mathrm{D} #2}}	%	fraction with material derivative
+\newcommand{\tens}[1]{\bm{#1}} % tensor in bold
+%\newcommand{\tens}[1]{\underline{\underline{#1}}} % tensor with \underline{•} or \overline{•}
+\newcommand{\ddr}[1]{\big(#1\big)'}
+
+
+% Mathematical sets
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\complex}{\mathbb{C}}
+\newcommand{\rationals}{\mathbb{Q}}
+\newcommand{\polynoms}{\mathbb{P}}
+
+
+% Vectors
+\renewcommand{\vec}[1]{\mathbf{#1}} % for vectors : remove the above arrow and write the vector in bold
+\newcommand{\ei}{\vec{e_i}} % base unit vector
+\newcommand{\ej}{\vec{e_j}} % base unit vector
+\newcommand{\ex}{\vec{e_x}} % horizontal unit vector
+\newcommand{\ey}{\vec{e_y}} % transverse unit vector
+\newcommand{\ez}{\vec{e_z}} % vertical unit vector
+\newcommand{\ns}{\vec{n}} % normal unit vector
+\newcommand{\es}{\vec{e_s}} % radial unit vector
+% unit vectors in spherical coordinates
+\newcommand{\er}{\vec{e_r}}
+\newcommand{\etheta}{\vec{e_{\theta}}}
+\newcommand{\ephi}{\vec{e_{\varphi}}}
+\newcommand{\veccol}[3]{\left|\begin{array}{ll} #1\\ #2\\ #3 \end{array} \right.}
+
+
+% Tilde
+\newcommand{\tu}{\tilde{u}} % horizontal velocity fluctuations
+\newcommand{\tv}{\tilde{v}} % horizontal velocity fluctuations
+\newcommand{\tw}{\tilde{w}} % vertical velocity fluctuations
+\newcommand{\tp}{\tilde{p}} % pressure fluctuations
+
+% Hat
+\newcommand{\hu}{\hat{u}} % horizontal velocity fluctuations
+\newcommand{\hv}{\hat{v}} % horizontal velocity fluctuations
+\newcommand{\hw}{\hat{w}} % vertical velocity fluctuations
+\newcommand{\hp}{\hat{p}} % pressure fluctuations
+% Vec + Tilde
+\newcommand{\vt}[1]{\vec{\tilde{#1}}}
+% Vec + Hat
+\newcommand{\vh}[1]{\vec{\hat{#1}}}
+
+
+
+% Spherical harmonics
+\newcommand{\shml}[2]{#1_m^{l#2}} % #2 = +1 or -1
+\newcommand{\uml}{u_m^l}
+\newcommand{\vml}{v_m^l}
+\newcommand{\wml}{w_m^l}
+\newcommand{\zml}{z_m^l}
+\newcommand{\pml}{p_m^l}
+\newcommand{\shlm}[1]{#1_l^m}
+\newcommand{\Ylm}{Y_l^m}
+\newcommand{\Rlm}{\vec{R_l^m}}
+
+\newcommand{\Slm}{\vec{S_l^m}}
+\newcommand{\Tlm}{\vec{T_l^m}}
+\newcommand{\all}[1]{\alpha_{l#1}^l}	%#1 = +1 or -1 or nothing
+
+
+% Miscellaneous
+\newcommand{\vphi}{\varphi} % simple phi
+\newcommand\Tau{\mathrm{T}}	% uppercase tau
+\newcommand{\real}{\operatorname{Re}} % real part
+\newcommand{\imag}{\operatorname{Im}} % imaginary part
+\renewcommand{\CancelColor}{\color{red}} % change cancel color
+\newcommand{\tcd}{\tilde{c}_D} % dimensionless Doppler-shifted phase velocity
+\newcommand{\tc}{\tilde{c}} % dimensionless Doppler-shifted phase velocity without subscript D
+
+
+%% New definition of square root:
+%% it renames \sqrt as \oldsqrt
+%\let\oldsqrt\sqrt
+%% it defines the new \sqrt in terms of the old one
+%\def\sqrt{\mathpalette\DHLhksqrt}
+%\def\DHLhksqrt#1#2{%
+%\setbox0=\hbox{$#1\oldsqrt{#2\,}$}\dimen0=\ht0
+%\advance\dimen0-0.2\ht0
+%\setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
+%{\box0\lower0.4pt\box2}}
+
+
+
+
+
+%==============================================================%
+% 							 Other							   %
+%==============================================================%
+% crop figures from pdf file : remove white spaces around the figure, from left to top counter-clockwise
+\newcommand{\trimmedgraphic}[2][]{%
+    \includegraphics[trim = 3cm 9cm 4.2cm 9.2cm,clip,width=0.5\textwidth,#1]%
+        {#2}%
+}
+
+
+% Define front page
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\blap}[1]{\vbox to 0pt{#1\vss}}
+\newcommand\AtUpperLeftCorner[3]{%
+  \put(\LenToUnit{#1},\LenToUnit{\dimexpr\paperheight-#2}){\blap{#3}}%
+}
+\newcommand\AtUpperRightCorner[3]{%
+  \put(\LenToUnit{\dimexpr\paperwidth-#1},\LenToUnit{\dimexpr\paperheight-#2}){\blap{\llap{#3}}}%
+}
+
+
+% New kind of list with items
+\newlist{steps}{enumerate}{1}
+\setlist[steps, 1]{label = H\arabic*} 
+
+
+% Comment out the input. Useful to comment out multiple lines of text
+\newcommand{\commentout}[1]{}
+
+
+
+
+%{\fontfamily{pcr}\selectfont TEXTE} % apply 'pcr' font to 'TEXTE'

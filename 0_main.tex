@@ -1,0 +1,46 @@
+\documentclass{report} % Type of document
+%----------------------------------------------------------------------------
+% Load all useful packages
+\usepackage{packages} 
+%----------------------------------------------------------------------------
+% Load custom commands
+\input{commandes.sty}
+%----------------------------------------------------------------------------
+% If documentclass is report => define appearance of chapter titles
+% check if 'titlesec' package is loaded first
+%\titleformat{\chapter}[hang]{\bf\huge}{\thechapter}{2pc}{} 
+%----------------------------------------------------------------------------
+% informations => title, author, date 
+\title{\Huge{Main Title}}
+\author{\textsc{Name} First name}
+\date{\today}
+%----------------------------------------------------------------------------
+% Number for equations, figures and tables according to the current section
+% ex: (2.3) => equation 3 from section 2
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+%---------------------------------------------------------------------------- 
+% Default path for figures
+\graphicspath{{images/}}
+%---------------------------------------------------------------------------- 
+% Definition of headers and footers
+%\pagestyle{fancy}
+%\fancyhead[L]{\rightmark}
+%\fancyhead[R]{}
+%----------------------------------------------------------------------------
+% Ressources biblio
+\addbibresource{biblio.bib}
+% style is defined in packages.sty, when the package "biblatex" is called
+%----------------------------------------------------------------------------
+\begin{document}
+\input{rapport_front_page}
+\tableofcontents
+\input{introduction}
+%\input{}
+\input{conclusion}
+\appendix
+\printbibliography[heading=bibintoc,title={Bibliographie}]
+%\printbibliography[heading=subbibintoc,type=article,title={Articles only}]
+\listoffigures
+\end{document}
