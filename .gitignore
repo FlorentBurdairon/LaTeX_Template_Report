@@ -1,10 +1,11 @@
+*.png
+*.pdf
+*.jpg
 *.aux
 *.bbl
 *.bcf
 *.blg
-*.lof
 *.log
-*.pdf
 *.run.xml
-*.synctex.gz
-*.toc
+figures/
+output/

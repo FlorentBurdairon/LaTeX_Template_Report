@@ -30,14 +30,14 @@
 %\fancyhead[R]{}
 %----------------------------------------------------------------------------
 % Ressources biblio
-\addbibresource{3_biblio.bib}
+\addbibresource{../bib_files/biblio.bib}
 % style is defined in packages.sty, when the package "biblatex" is called
 %----------------------------------------------------------------------------
 \begin{document}
-\input{4_front_page}
+% Note : "include" uses \clearpage, whereas "input" does not
+\include{4_front_page}
 \tableofcontents
 \input{5_introduction}
-%\input{}
 \input{6_conclusion}
 \appendix
 \printbibliography[heading=bibintoc,title={Bibliographie}]
